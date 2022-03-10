@@ -78,7 +78,10 @@ div img {
     
 }
 
-
+p, ol, h3{
+    position: relative;
+    top: 40px;
+}
 
 #container-para-comprar {
     background-color: #e7eb90;
@@ -100,6 +103,11 @@ div img {
 div:nth-child(2),
 div:last-child {
     text-align: center;
+}
+
+
+.tabela{
+    margin: 0 auto;
 }
 
 table {
