@@ -1,0 +1,61 @@
+
+/* INDEX.HTML */
+body{
+    margin: 0;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #1d1d1d;
+}
+.topo{
+    height:60px;
+    background-color: #1d1d1d;
+}
+.topo-logo{
+    width:80px;
+    height:60px;
+    max-width: 1040px;
+    background-color:#000000;
+    color: white;
+}
+.topo-menu{
+    margin-left:80px;
+    width:1000px;
+    height:60px;
+    background-color:#1d1d1d;
+}
+.topo-menu ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: red;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+.topo-menu li {
+    float: left;
+    line-height:50px;
+    margin-left: 100px;
+    margin-left:100px;
+}
+.topo-menu li a {
+    text-decoration:none;
+    color: white;
+}
+.texto-container h1,h2,h3{
+    
+    position: relative;
+    top: 100px;
+    text-align: left;
+    color:#08fdd8;  
+}
+.img{
+    
+    position: relative;
+    top:0px;
+    left: 600px;    
+}
+/* PROJETOS.HTML */
+
+.projeto1{
+    color: #08fdd8;
+}
