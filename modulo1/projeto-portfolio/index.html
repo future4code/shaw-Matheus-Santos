@@ -6,36 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="/style.css" rel="stylesheet">
-    <title>Matheus-Natal-Web-Developer</title>
 </head>
 <body>
-    <img src="/imagens/foto-remover-fundo-removebg-preview.png" width="150px
-    <div class="topo">
-       
-            <div class="topo-menu">
+    <header class="container">
+        <div class="img-perfil"><img src="/imgs/foto-remover-fundo-removebg-preview.png"width="150px" ></div>
+        <div class="apresentacao">
+            <h1>Matheus Natal Santos<br>
+            <h2>Web Developer</h2></h1>
+            <nav class="menu">
                 <ul>
-                    <li> <a href="/sobremim.html" class="ativo" > Sobre mim </a></li>
-                    <li><a href="/projetos.html" class="ativo"> Projetos </a></li>
-                    <li><a href="/contato.html"class="ativo"> Contatos </a></li>
-                    <li><a href="/midiassociais.html "class="ativo" > Midias sociais </a></li>
+                   <li><a href="/projetos.html" target="blank">Projetos</a></li>
+                   <li><a href="/habilidades.html" target="blank">Habilidades</a></li>
+                   <li><a href="/contato.html" target="blank">Contato</a></li>
+        
                 </ul>
-            </div>
+          </nav>     
         </div>
-    </div>
-    <div class="texto-container">
-        <h1>Seja muito bem vindo a este portfólio</h1>
-        <h2>Aqui vão algumas informações sobre este<br>
-        aspirante a Web-Developer.</h2>
-        <h3>Me chamo Matheus Natal,tenho 25 anos,residente do Rio de Janeiro<br>
-        Além de amante de uma boa praia com um copo de mate na mão<br>
-        mesclo meus interesses por Desenvolvimento web,tanto no <br>
-        front end, quanto no back end. Focado em aprender o máximo que <br>
-        for possível durante esses 6 meses de curso, tanto quanto me <br>
-        relacionar com essas pessoas incríveis aqui presentes!</h3>
-            <div class="img" ><img src="data:image/png;base64,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" width="400px" height="400px" </div>
-    </div>
-    
-
-    
+    </header>
+    <main class="main">
+        <div class="texto-recepcao">
+            <h1>
+                Olá, Seja muito bem vindo<br> ao meu portfólio!
+            </h1>
+            <h3>Me chamo Matheus Natal, pode me chamar só de Natal!<br>
+            Tenho 25 anos, gosto de atividades físicas e passear com <br>
+            o minha cachorra (Bonnie-S2),além desse pacote completo, estou<br>
+            estudando para me tornar um desenvolvedor Full-Stack, através da <br>
+            escola de programação Labenu!</h3>
+        
+        </div>
+        <img class="img-centro" src="/imgs/be53f28e93c322434e8cecc66e8af49f--website-developer-mvc.jpg"width="200px">
+    </main>
+    <footer class="footer">
+        <h4>Feito por Matheus Natal Santos</h4>
+    </footer>
+     
+ 
 </body>
 </html>
