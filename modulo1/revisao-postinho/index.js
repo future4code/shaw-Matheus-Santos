@@ -88,7 +88,20 @@ console.log(login());
 const primeiraDose = () => {
 
     //  Sua lógica aqui
-    let nomeUsuario
+    let nome = prompt(`Digite seu nome`)
+    let vacina = prompt(`Digite sua vacina`)
+    let tempo = ""
+    let data = `Data de hoje + os dias da sua vacina`
+
+
+    if (vacina === "Astrazenica" || vacina === "Pfizer"){
+        tempo = 90
+    }else if (vacina === "Coronavac"){
+        tempo = 28
+    }
+        
+        
+     console.log(`Olá ${nome}! A próxima dose da ${vacina} é daqui a ${tempo} dias. Compareça no posto na data ${data}.`);
 
 }
 console.log(primeiraDose())
@@ -106,9 +119,8 @@ const segundaDose = (nomeDoUsuario) => {
     ]
 
     //  Sua lógica aqui
-
-
-}
+    return { ...usuarios, nomeDoUsuario, imunizacao: "completa"} 
+}  
 console.log(segundaDose("Barbara"));
 
 // Exercício 7 --------------------------------------------------------------------------------------
@@ -121,8 +133,14 @@ const avisoAosAtrasados = () => {
     ]
 
     //  Sua lógica aqui
+  for(let i = 0; i < usuarios.length; i++){
+        if (usuarios[i].imunizacao == "incompleta"){
+        console.log(`Olá ${usuarios[i].nome}! Sua imunização está ${usuarios[i].imunizacao}, por favor volte ao postinho para tomar a segunda dose.`)
+        }
+        } 
 
 }
+
 console.log(avisoAosAtrasados());
 
 
