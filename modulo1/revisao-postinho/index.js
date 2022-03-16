@@ -190,48 +190,87 @@ const usuarios = [
 
 
 // }
-// console.log(cadastroDesafio(nome,senha));
-let novoObjeto = {}
-const loginDesafio = () => {
-    //  Sua lógica aqui
+// // console.log(cadastroDesafio(nome,senha));
+// let novoObjeto = {}
+// const loginDesafio = () => {
+//     //  Sua lógica aqui
     
-    if(idade >18 && senhaa.length > 6 && nacionalidade === "brasileira" ){
+//     if(idade >18 && senhaa.length > 6 && nacionalidade === "brasileira" ){
             
-            novoObjeto = {
-            nome : nomee,
-            ano :ano,
-            nacionalidade: nacionalidade,
-            senha: senhaa,
-            vacina: vacina,
-            imunizacao: imunizacao,
-        }
+//             novoObjeto = {
+//             nome : nomee,
+//             ano :ano,
+//             nacionalidade: nacionalidade,
+//             senha: senhaa,
+//             vacina: vacina,
+//             imunizacao: imunizacao,
+//         }
 
-        }else{
-            console.log("Não foi possivel completar o cadastro");
-        }
-        usuarios.push(novoObjeto)
-        return usuarios
-}
-    let nomee = prompt(`Digite seu nome`)
-    let ano = Number(prompt(`Qual ano você nasceu`))
-    let nacionalidade = prompt(`Digite sua nacionalidade`)
-    let senhaa = prompt(`Digite sua senha`)
-    let vacina = prompt(`Digite a sua vacina`)
-    let imunizacao = prompt(`Digite sua imunização,completa ou incompleta`)
-    let idade = 2022 - ano
+//         }else{
+//             console.log("Não foi possivel completar o cadastro");
+//         }
+//         usuarios.push(novoObjeto)
+//         return usuarios
+// }
+//     let nomee = prompt(`Digite seu nome`)
+//     let ano = Number(prompt(`Qual ano você nasceu`))
+//     let nacionalidade = prompt(`Digite sua nacionalidade`)
+//     let senhaa = prompt(`Digite sua senha`)
+//     let vacina = prompt(`Digite a sua vacina`)
+//     let imunizacao = prompt(`Digite sua imunização,completa ou incompleta`)
+//     let idade = 2022 - ano
 
-console.log(loginDesafio(novoObjeto));
+// console.log(cadastroDesafio(novoObjeto));
 
-const primeiraDoseDesafio = () => {
-//  Sua lógica aqui
-}
-console.log(primeiraDoseDesafio())
-const segundaDoseDesafio = (nomeDoUsuario) => {
-    //  Sua lógica aqui
-}
-console.log(segundaDoseDesafio("ALGUM NOME AQUI"));
+// DESAFIO 4 ABAIXO
 
-const avisoAosAtrasadosDesafio = () => {
-    //  Sua lógica aqui
-}
-console.log(avisoAosAtrasadosDesafio());
+// let senha = prompt("Digite a sua senha:")  
+// const loginDesafio = () => {
+//     for(let i = 0; i < usuarios.length; i++) {
+//              if(usuarios[i].senha === senha) {
+//                               console.log(`Usuarios ${usuarios[i].nome} logado !`) 
+//                             }else {  
+//                                        console.log(`Usuario não encontrado`)
+//                                     }
+//                                      }
+//                                       }
+                                      
+//                                       console.log(loginDesafio());
+
+// const primeiraDoseDesafio = () => {
+    
+//     for(let i = 0;i<usuarios.length;i++){
+//         if(usuarios[i].imunizacao === `completa` ){
+//            usuarios[i].imunizacao = 'incompleta';
+//         }
+//     }return usuarios
+// }
+// console.log(primeiraDoseDesafio())
+
+
+// OPERAÇÃO TERNÁRIA
+const segundaDose = (nomeDoUsuario) => {  
+    const resultado = usuarios.map((item) =>{
+        return item.nome === nomeDoUsuario ? {...item,imunizacao:"completa"}:item
+    }
+      
+    ,console.log(segundaDoseDesafio ('DIGITE ALGUM NOME AQUI'))
+
+
+         
+
+
+
+
+
+
+// const segundaDoseDesafio = (nomeDoUsuario) => {
+//     //  Sua lógica aqui
+    
+// }
+// console.log(segundaDoseDesafio("ALGUM NOME AQUI"));
+
+// const avisoAosAtrasadosDesafio = () => {
+//     //  Sua lógica aqui
+// }
+    // console.log(avisoAosAtrasadosDesafio());
