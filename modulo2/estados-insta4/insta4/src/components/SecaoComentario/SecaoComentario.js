@@ -28,7 +28,7 @@ export class 	SecaoComentario extends Component {
 			<InputComentario
 				placeholder={'Comentário'}
 				value={this.state.inputComentario}
-				onChange={this.onChangeComentario}
+				onChange={this.onChangeComentario} 
 			/>
 			<button onClick={this.props.aoEnviar}>Enviar</button>
 		</CommentContainer>
