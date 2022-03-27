@@ -1,25 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import Areadosite from './Component/Area-do-site';
+import { render } from '@testing-library/react';
+import React from 'react';
+import styledComponents from 'styled-components';
 
-function App() {
+const Main = styledComponents.div`
+.root {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+`
+
+
+class App extends React.Component {
+
+    render(){
+     
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    
+    <div className="root">
+      <Areadosite/>
     </div>
   );
+}
 }
 
 export default App;
