@@ -50,16 +50,40 @@ const Button = styledComponents.button`
 
 class App extends React.Component {
 
+  state = {
+    controleUsuario: "",
+    controleTexto: ""
+    
+  }
+  onChangeUser = (event) =>{
+    this.setState({controleUsuario:event.target.value})
+    console.log(this.state.controleUsuario);
+  }
+
+  onChangeTexto = (event) =>{
+    this.setState({controleTexto:event.target.value})
+    console.log(this.state.controleTexo);
+  }
+
+  onClickButton = () =>{
+    this.setState({controleUsuario:""})
+    this.setState({controleTexto:""})
+
+  }
+
     render(){
+     
       
   return (    
     <Root>
       <Container>
         <MenssageArea/>
          <InputArea>
-          <User placeholder='Usuario'/>
-          <Text placeholder='Menssagem'/>
-          <Button type='submit'>Enviar</Button>
+          <User placeholder='Usuario' onChange={this.onChangeUser}  
+          value={this.state.controleUsuario}/>
+          <Text placeholder='Menssagem' onChange={this.onChangeTexto}
+          value={this.state.controleTexto}/>
+          <Button type='submit' onClick={this.onClickButton}>Enviar</Button>
          </InputArea>
           {/* <Areadosite/> */}
       </Container>
