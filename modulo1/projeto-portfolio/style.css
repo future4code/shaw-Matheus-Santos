@@ -1,0 +1,200 @@
+body{
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+h1, h2{
+    color: #08fdd8;
+}
+/* HEADER */
+.container{
+    display: flex;
+    flex-direction: row;
+}
+.img-perfil{
+    background-color: #1d1d1d;
+    height: 200px;
+    width: 20%;
+}
+.apresentacao{
+    background-color:#1d1d1d;
+    width:100%;
+    text-align: center;
+    position: relative;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:15px;
+}
+.apresentacao h1,h2{
+    position: relative;
+    top:40px;
+}
+.menu{
+    width: 100%;
+    height: 30px;
+    background-color: gray;
+    position: relative;
+    top: 53px;
+    border: 1px solid #08fdd8;
+
+}
+.menu ul{
+    margin: 0;
+    list-style: none;
+    color: black;
+    
+}
+.menu li{
+    height:30px;
+    margin-left:10%;
+    margin-right:20px;
+    margin-top:6px;
+    float: left;
+    color: #08fdd8;
+}
+.menu li a{
+    text-decoration: none;
+    color: black;
+}
+/* MAIN */
+
+.main{
+    width: 100vw;
+    height: 90vh;
+    background-color: #1d1d1d;
+}
+.main h1{
+    margin-top: 0;
+}
+.texto-recepcao{
+    position: relative;
+    top: 20%;
+    display: inline-block;
+    flex-direction: column;
+    align-items:left;
+    width:50%;
+    color: #08fdd8;
+}
+.img-centro{
+    display: inline;
+    position: relative;
+    top:120px;
+    left:200px;
+}
+/* FOOTER */
+.footer h4{
+    background-color:black;
+    margin: 0;
+    color: #08fdd8;
+    text-align: center;
+}
+
+
+/* PROJETOS.HTML */
+
+.menu{
+   position: relative;
+   top:150px;
+}
+
+.body-projeto{
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    color: #08fdd8;
+    margin:0;
+    padding: 0;
+}
+.tabela-projetos{
+    position:relative;
+    top: 100px;
+    margin-left:300px;
+    margin-right: 300px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-style: double;
+    border-radius: 8px;
+}
+.texto-projeto h3{
+    position: relative;
+    top: 100px;
+    text-align: center;
+    border-style: double;
+    border-radius: 8px;
+}
+
+/* HABILIDADES */
+
+.body-habilidades{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.bem-vindo-habilidades{
+    position: relative;
+    top: 50px;
+}
+.menu-habilidades{
+    width: 100%;
+    height: 30px;
+    background-color: gray;
+    position: relative;
+    top: 53px;
+    border: 1px solid #08fdd8;
+}
+
+.menu-habilidades ul{
+    margin: 0;
+    list-style: none;
+    color: black;
+    
+}
+.menu-habilidades li{
+    height:30px;
+    margin-left:10%;
+    margin-right:20px;
+    margin-top:6px;
+    float: left;
+    color: #08fdd8;
+}
+.menu-habilidades li a{
+    text-decoration: none;
+    color: black;
+    border: 1px #08fdd8;
+}
+.titulo-habilidades li{
+    color: #08fdd8;
+    position: relative;
+    top: 30px;
+    width: 50%;
+}
+.titulo-habilidades-tecnicas li{
+color: #08fdd8;
+position: relative;
+top: 30px;
+width: 50%;
+}
+
+/* CONTATO */
+.formulario{
+    position: relative;
+    top: 80px;
+    color: #08fdd8;
+}
+.midias-sociais{
+    display: inline;
+    position: relative;
+    top: 80px;
+}
+#um{
+    position: relative;
+    top: 30px;
+}
+#dois{
+    background-color: white;
+    position: relative;
+    top: 30px;
+}
