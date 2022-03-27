@@ -11,6 +11,7 @@ const Root = styled.div`
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
+  
 `
 const Container = styled.div`
   display: flex;
@@ -21,6 +22,8 @@ const Container = styled.div`
   width: 600px;
   height:100vh;
   border: 1px solid black;
+  border-radius: 5px;
+  background-image:url(https://i.pinimg.com/564x/8e/6b/e9/8e6be91a01ba06f18b9eddfb944b2b42.jpg);
 `
 const MenssageArea = styled.div `
   display: flex;
@@ -39,12 +42,14 @@ const User = styled.input`
   font-weight: bold;
   width:80px;
   margin-bottom: 2px;
+  border-radius: 10px;
 `
 const Text = styled.input`
   width:450px;
+  border-radius: 10px;
 `
 const Button = styled.button`
-
+  border-radius: 10px;
 `
 
 
