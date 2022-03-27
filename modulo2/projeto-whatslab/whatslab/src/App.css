@@ -1,4 +1,4 @@
-.root {
+/* .root {
   text-align: center;
   display: flex;
   align-items: center;
@@ -15,9 +15,9 @@
   width: 600px;
   height:100vh;
   border: 1px solid black;
-}
+} */
 
-.menssage-area{
+/* .menssage-area{
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -30,14 +30,14 @@
 
 .input-area{
   display: flex;
-}
+} */
 
-.user{
+/* .user{
   font-weight: bold;
   width:80px;
   margin-bottom: 2px;
-}
+} */
 
-.text{
+/* .text{
   width:450px;
-}
+} */
