@@ -2,17 +2,17 @@ import './App.css';
 // import Areadosite from './Component/Area-do-site';
 import { render } from '@testing-library/react';
 import React from 'react';
-import styledComponents from 'styled-components';
+import styled from 'styled-components';
 
 
-const Root = styledComponents.div`
+const Root = styled.div`
   text-align: center;
-  display: flex;
+  display:flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
 `
-const Container = styledComponents.div`
+const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -22,7 +22,7 @@ const Container = styledComponents.div`
   height:100vh;
   border: 1px solid black;
 `
-const MenssageArea = styledComponents.div `
+const MenssageArea = styled.div `
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -31,19 +31,19 @@ const MenssageArea = styledComponents.div `
   height: 100vh;
   padding: 20px;
 `
-const InputArea = styledComponents.div `
+const InputArea = styled.div `
   display: flex;
 `
 
-const User = styledComponents.input`
+const User = styled.input`
   font-weight: bold;
   width:80px;
   margin-bottom: 2px;
 `
-const Text = styledComponents.input`
+const Text = styled.input`
   width:450px;
 `
-const Button = styledComponents.button`
+const Button = styled.button`
 
 `
 
@@ -62,10 +62,13 @@ class App extends React.Component {
 
   onChangeTexto = (event) =>{
     this.setState({controleTexto:event.target.value})
-    console.log(this.state.controleTexo);
+    console.log(this.state.controleTexto);
   }
 
   onClickButton = () =>{
+      // const listaTexto = [...this.state.controleTexto]
+      // listaTexto.push(this.state.controleTexto)
+      // console.log(listaTexto);
     this.setState({controleUsuario:""})
     this.setState({controleTexto:""})
 
