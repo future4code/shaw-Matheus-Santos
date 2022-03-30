@@ -1,0 +1,43 @@
+/* .root {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items:flex-start;
+  margin:0px;
+  width: 600px;
+  height:100vh;
+  border: 1px solid black;
+} */
+
+/* .menssage-area{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  width: 580px;
+  height: 100vh;
+  padding: 20px;
+  
+}
+
+.input-area{
+  display: flex;
+} */
+
+/* .user{
+  font-weight: bold;
+  width:80px;
+  margin-bottom: 2px;
+} */
+
+/* .text{
+  width:450px;
+} */
