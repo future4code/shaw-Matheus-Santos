@@ -1,0 +1,38 @@
+import React from 'react';
+import Styled from 'styled-components'
+
+
+const Container = Styled.div 
+` display: flex;
+align-items: center;
+border: 1px solid black;
+padding: 20px 10px;
+margin-bottom: 10px;
+height: 70px;
+img {
+    width: 30px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+h4 {
+    margin-bottom: 5px;
+}
+div {
+    display: flex;
+    flex-direction:column;
+    justify-items: flex-start;
+}`
+
+function CardPequeno(props) {
+    return (
+        <Container>
+            <img src={ props.imagem } />
+            <div>
+                <h4>{ props.titulo }</h4>
+                <p>{ props.info }</p>
+            </div>
+        </Container>
+    )
+}
+
+export default CardPequeno;
