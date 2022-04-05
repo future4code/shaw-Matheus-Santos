@@ -4,18 +4,26 @@ import Entrada from "./Components/Entrada";
 import SegPagina from "./Components/SegPagina";
 import axios from "axios";
 
+const StyleEntrada = styled.div`
+    margin:10px;
+`
+
+// INICIEI O GETUSER-CRIEI A FUNÇÃO E SÓ, E ACHO QUE TEM ALGUM ERRO-VERIFICAR!!!!
+
 class App extends React.Component {
   
   state = {
-    name:"",
-    email:"",
-    body:[]
+    inputName:"",
+    inputEmail:"",
+    inputBusca:""
   }
   
+    // API-JAVASCRIPT
+
    createUser = () => {
     const body = {
-      name:"",
-      email:""
+      name:this.state.inputName,
+      email:this.state.inputEmail
     }
     axios.post("https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users",body,{
       headers:{
@@ -23,20 +31,40 @@ class App extends React.Component {
       }
     }
     ).then((resposta) => {
-      console.log(resposta.data);
+      this.setState({inputName:"",inputEmail:""})
+      
+      alert("sucesso")
     }).catch((error) => {
       console.log(error.message);
     })
   }
 
-  onChangename = (event) => {
-    this.setState({name:event.target.value})
+  getUser = () => {
+    axios.get ("https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/:id",{
+      headers:{
+        Authorization:"matheusnatal-shaw"
+      }
+    }).then((resposta)=>{
+      this.setState({inputName: resposta.data})
+      console.log(resposta);
+      alert("foi")
+    })
   }
 
-  onClickButton = (event) => {
-    
+
+// FUNÇÕES
+
+  onChangeinputName = (event) => {
+    this.setState({inputName:event.target.value})
   }
 
+  onChangeinputEmail = (event) => {
+    this.setState({inputEmail:event.target.value})
+  }
+
+  onChangeinputBusca = (event) => {
+    this.setState({inputBusca:event.target.value})
+  }
   
   render(){
 
@@ -44,11 +72,23 @@ class App extends React.Component {
   return (
 
     <div>
+      <StyleEntrada>
       <Entrada/>
-      <input type="text"  placeholder="Nome de usuário" value={this.props.name} onChange={this.onChangename}/>
-      <input type="text" placeholder="e-mail" value={this.props.email} />
-            <button type="submit" value={this.onClickButton}>Criar Usuario</button> // 
+             <input type="text"  placeholder="Nome de usuário" 
+              value={this.state.inputName} 
+              onChange={this.onChangeinputName}/>
+             <input type="text" 
+              placeholder="e-mail" 
+              value={this.state.inputEmail} 
+              onChange={this.onChangeinputEmail} />
+            <button onClick={this.createUser}>Criar Usuario</button>
+      </StyleEntrada>
       <SegPagina/>
+         <input type="text"  
+         placeholder="Nome exato para a busca"
+         value={this.state.value}
+         onChange={this.onChangeinputBusca} />
+            <button type="submit">Buscar</button>
 
     </div>
   );

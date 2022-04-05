@@ -3,9 +3,9 @@ import React from "react";
 import styled from "styled-components";
 import axios from "axios";
 
-const StyleEntrada = styled.div`
-    margin:10px;
-`
+// const StyleEntrada = styled.div`
+//     margin:10px;
+// `
 
 
 class Entrada extends React.Component {
@@ -13,14 +13,14 @@ class Entrada extends React.Component {
   
   
     return (
-        <StyleEntrada>
+        // <StyleEntrada>
       <div>
         <label> 
             <button>Trocar de tela</button>
             <br/>
         </label>
       </div>
-      </StyleEntrada>
+    //   </StyleEntrada>
     );
   }
   }

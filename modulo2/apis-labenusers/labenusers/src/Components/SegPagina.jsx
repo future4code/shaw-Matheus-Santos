@@ -20,8 +20,8 @@ class SegPagina extends React.Component {
             <button>Voltar</button>
             <br/>
             <h3>Procurar usuário</h3>
-            <input type="text"  placeholder="Nome exato para a busca"/>
-            <button type="submit">Salvar edição</button>
+            {/* <input type="text"  placeholder="Nome exato para a busca"/>
+            <button type="submit">Buscar</button> */}
         </label>
       </div>
       </StyleSegPagina>
