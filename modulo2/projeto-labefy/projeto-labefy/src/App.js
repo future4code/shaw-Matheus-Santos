@@ -17,9 +17,9 @@ import TelaListaPlaylist from "./Components/TelaListaPlaylist";
     escolherTela = () => {
       switch (this.state.TelaAtual){
         case "criar":
-          return <TelaCriarPlaylist irParaCriarPlaylist = {this.irParaCriarPlaylist}/>
+          return <TelaCriarPlaylist irParaListaPlaylist = {this.irParaListaPlaylist}/>
         case "lista":
-        return <TelaListaPlaylist irParaListaPlaylist = {this.irParaListaPlaylist}/>
+        return <TelaListaPlaylist irParaCriarPlaylist = {this.irParaCriarPlaylist}/>
       }
     }
 
