@@ -9,10 +9,10 @@ const IconeContainer = styled.div`
 	}
 `
 
-function IconeComContador(props) {
+function IconeComContador(iconeCurtida) {
 	return <IconeContainer>
-		<img alt={'Icone'} src={props.icone} onClick={props.onClickIcone}/>
-		<p>{props.valorContador}</p>
+		<img alt={'Icone'} src={iconeCurtida.icone} onClick={iconeCurtida.onClickIcone}/>
+		<p>{iconeCurtida.valorContador}</p>
 	</IconeContainer>
 }
 
