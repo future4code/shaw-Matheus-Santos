@@ -1,6 +1,7 @@
 
 import React, {useState, useEffect} from"react";
 import CardMatch from "./components/CardMatch/CardMatch";
+import MatchCard from "./components/MatchPage/MatchPage";
 import axios from "axios";
 import styled from "styled-components";
 
@@ -30,6 +31,7 @@ useEffect(()=>{
   obterPerfilParaEscolha()
 },[])
 
+const [arrayPerfil, setArrayPerfil] =useState({})
 
 
   const obterPerfilParaEscolha =() =>{
@@ -61,6 +63,41 @@ axios.get('https://us-central1-missao-newton.cloudfunctions.net/astroMatch/mathe
     })
       }
 
+    {/* Tentando implementar as APIS abaixo, verificar amanhã tudo com o pessoal*/}
+
+  // const getMatches = () =>{
+  //   const url =`https://us-central1-missao-newton.cloudfunctions.net/astroMatch/matheus-natal-shaw/matches`
+
+  //   const body ={
+  //     name:matches.name,
+  //     photo:matches.photo
+  //   }
+  //   axios
+  //   .post (url, body)
+  //   .then((response)=>{
+  //     setArrayPerfil(response.data.) {/* Não sei o que colocar aqui ou se esta API (getMatches) esta certa*/}
+  //   })
+  //   .catch((err)=>{
+  //     alert(err.data)
+  //   })
+  // }
+  const clear = ()=>{
+    const url = `https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:aluno/clear`
+
+    const body={
+      message:"Sucess"
+    }
+    axios
+    .post ()
+    .then((response)=>{
+      // Alguma coisa aqui
+    })
+    .catch((err)=>{
+      alert (err.data)
+    })
+  }
+
+
 
 
 
@@ -75,8 +112,18 @@ axios.get('https://us-central1-missao-newton.cloudfunctions.net/astroMatch/mathe
     onClick={()=> choosePerson(false)} >
       Dislike</button>
     <button onClick={()=>choosePerson(true)}>Like</button>
+
+    <button>Página de Matches</button> {/* Implementar a função para trocar a página de matches*/}
+
+    {/* <button
+    onClick={clear} {/*Não sei se é assim que se chama ou se precisa utilizar arrow function como os botões de cima.*/}
+
+    {/* >Reset Matches</button> Implementar a função de resetar os matches, site não ta aparecendo pois já dei todos os matches possíveis,preciso resetar para voltar a rodar */} */}
     
+    <MatchCard propsProfile={profile} />
+
   </PrincipalStyle>
+  
 
   )
 }

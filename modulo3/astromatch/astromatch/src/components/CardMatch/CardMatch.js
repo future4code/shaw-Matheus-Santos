@@ -8,7 +8,7 @@ display:flex;
 justify-content: center;
 flex-direction: column;
 align-items: center;
-background-color: blue;
+background-color: lightgray;
 border-radius: 20px;
 img{
     margin-top: 30px;
@@ -24,7 +24,9 @@ function CardMatch (props){
     <img src={props.propsProfile.photo}/>
     <h1>{props.propsProfile.name}</h1>
     <p>{props.propsProfile.bio}</p>
+    <button>Clear</button>
      </MainContainer>
+     
 
    )
 }
