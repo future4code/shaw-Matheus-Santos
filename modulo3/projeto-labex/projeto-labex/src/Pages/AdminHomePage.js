@@ -1,6 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
+import { goBack } from "../Routes/coordinator";
+import { goToCreateTrip } from "../Routes/coordinator";
+import { goToTripDetailsPage } from "../Routes/coordinator";
 
 const StyleAdminHomePage=styled.div`
 display: flex;
@@ -13,25 +16,14 @@ const AdminHomePage= ()=> {
 
     const navigate=useNavigate()
 
-    const goBack=()=>{
-        navigate(-1)
-    }
-
-    const goToCreateTrip=()=>{
-        navigate("/LoginPage/AdminHomePage/CreateTripPage")
-    }        
-    
-    const goToTripDetailsPage=()=>{
-        navigate("/LoginPage/AdminHomePage/TripDetailsPage")
-    }
 
 return(
     <StyleAdminHomePage>
        <h1>Painel Adminstrativo</h1>
         <div>
-            <button onClick={goBack}>Voltar</button>
-            <button onClick={goToCreateTrip}>Criar Viagem</button>
-            <button onClick={goToTripDetailsPage}>Logout</button>
+            <button onClick={()=>goBack(navigate)}>Voltar</button>
+            <button onClick={()=>goToCreateTrip(navigate)}>Criar Viagem</button>
+            <button onClick={()=>goToTripDetailsPage(navigate)}>Logout</button>
         </div>
         <div>
             Fulano  

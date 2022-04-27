@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { useNavigate } from "react-router-dom"
+import { goBack } from "../Routes/coordinator"
 
 const StyleApplicationFormPage=styled.div`
 display: flex;
@@ -11,10 +12,6 @@ flex-direction: column;
 
 const ApplicationFormPage= ()=> {
     const navigate=useNavigate()
-
-    const goBack = ()=>{
-        navigate(-1)
-    }
 
 return(
     <StyleApplicationFormPage>
@@ -28,7 +25,7 @@ return(
                 <option>viagem 5</option>
             </select> 
             <div>   
-                <button onClick={goBack}>Voltar</button>
+                <button onClick={()=>goBack(navigate)}>Voltar</button>
                 <button>Enviar Formulário</button>
             </div>
         </div>

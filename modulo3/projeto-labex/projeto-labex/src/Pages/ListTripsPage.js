@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
+import { goBack} from "../Routes/coordinator";
+import {goToApplicationFormPage} from "../Routes/coordinator"
 
 const StyleListTripsPage=styled.div`
 display: flex;
@@ -13,14 +15,6 @@ const ListTripsPage =()=> {
 
     const navigate = useNavigate()
 
-    const goToApplicationFormPage =()=>{
-        navigate("/ListTripsPage/ApplicationFormPage")
-    }               
-
-
-    const goBack = ()=>{
-        navigate(-1)
-    }
 
 
 return(
@@ -28,8 +22,8 @@ return(
     <StyleListTripsPage>
         <h1>Lista de Viagens</h1>
         <div>
-            <button onClick={goBack} >Voltar</button>
-            <button onClick={goToApplicationFormPage}>Inscrever-se</button>
+            <button onClick={()=>goBack(navigate)} >Voltar</button>
+            <button onClick={()=>goToApplicationFormPage(navigate)}>Inscrever-se</button>
         </div>
         <div>
            <p>Fulano</p>

@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
+import { goBack } from "../Routes/coordinator";
 
 const StyleTripDetailsPage=styled.div`
 display: flex;
@@ -14,10 +15,6 @@ const TripDetailsPage=()=>{
 
     const navigate=useNavigate()
 
-    const goBack = ()=>{
-        navigate(-1)
-    }
-
     return(
         <StyleTripDetailsPage>
             <h2>Usuario</h2>
@@ -27,7 +24,7 @@ const TripDetailsPage=()=>{
                 <p>Planeta:Plutão</p>
                 <p>Duração:7 Dias</p>
                 <p>Data:26/04/2022</p>
-                <button onClick={goBack}>Voltar</button>
+                <button onClick={()=>goBack(navigate)}>Voltar</button>
             </div>
         </StyleTripDetailsPage>
     )
