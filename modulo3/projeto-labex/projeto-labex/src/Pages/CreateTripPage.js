@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 
 const StyleCreateTripPage=styled.div`
@@ -10,6 +11,11 @@ flex-direction: column;
 `
 
 const CreateTripPage=()=>{
+    const navigate=useNavigate()
+    const goBack=()=>{
+        navigate(-1)
+    }
+
     return(
         <StyleCreateTripPage>
             <h1>Criar Viagem</h1>
@@ -26,7 +32,7 @@ const CreateTripPage=()=>{
                 <input placeholder="Duração em dias" ></input>
             </div>
             <div>
-                <button>Voltar</button>
+                <button onClick={goBack}>Voltar</button>
                 <button>Criar Viagem</button>
 
             </div>
