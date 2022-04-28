@@ -365,7 +365,7 @@ return(
 	<option value="Wallis e Futuna">Wallis e Futuna</option>
 	<option value="Zimbabwe">Zimbabwe</option>
 	<option value="Zâmbia">Zâmbia</option>
-</select>
+                </select>
             </div>
             <div>   
                 <button onClick={()=>goBack(navigate)}>Voltar</button>
