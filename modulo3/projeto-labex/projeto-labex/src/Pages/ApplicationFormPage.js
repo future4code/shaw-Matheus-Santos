@@ -99,7 +99,7 @@ console.log(id);
     })
 }
 
-
+   
 return(
     <StyleApplicationFormPage>
         <h1>Inscreva-se para uma viagem</h1>
