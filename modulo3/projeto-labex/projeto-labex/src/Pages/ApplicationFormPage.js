@@ -28,7 +28,7 @@ const ApplicationFormPage= ()=> {
         getTrips()
     },[])
 
-    
+    {/*ffsffsfsdf*/}
 
     const postApplys=()=>{
        
