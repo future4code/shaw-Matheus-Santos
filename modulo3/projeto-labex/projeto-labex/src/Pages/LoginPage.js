@@ -19,31 +19,43 @@ const LoginPage=()=> {
     const [email, setEmail]=useState("")
     const [password, setPassword]=useState("")
     
-    const enviar = ()=>{
+
+
+    const onChangeEmail=(ev)=>{
+        setEmail(ev.target.value)
+    }
+    const onChangePassword=(ev)=>{
+        setPassword(ev.target.value)
+    }
 
     
-const body ={
-    email:email,
-    password:password
-}
-axios.post(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/matheus-natal-shaw/login
-`)
-.then((res)=>{
-    console.log(`Deu certo!`, res.data)
+
+    const onChangeSubmitLogin = ()=>{
+        
+        const body ={
+            email:email,
+            password:password
+        }
+        axios.post(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/matheus-natal-shaw/login
+        `,body)
+.then((response)=>{
+    console.log(`Deu certo!`, response.data.token)
+    localStorage.setItem(`token`, response.data.token)
+    {goToAdminHomePage}
+})                                               
+.catch((error)=>{
+    console.log(`Deu errado!`, error.response);
 })
-.catch((err)=>{
-    console.log(`Deu errado!`, err.data);
-})
 }
+
 return(
     <StyleLoginPage>
         <h2>Login</h2>
-        <input placeholder="E-mail"></input>
-        <input placeholder="Senha"></input>
+        <input placeholder="E-mail" onChange={onChangeEmail} ></input>
+        <input placeholder="Senha"  onChange={onChangePassword}></input>
             <div>
                 <button onClick={()=>goBack(navigate)} >Voltar</button>
-               <button onClick={enviar}>Enviar teste</button>
-                {/* <button onClick={()=>goToAdminHomePage(navigate)} >Entrar</button> */}
+               <button onClick={onChangeSubmitLogin}>Enviar teste</button>
             </div>
     </StyleLoginPage>
 )

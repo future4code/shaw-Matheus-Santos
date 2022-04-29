@@ -47,7 +47,7 @@ const ApplicationFormPage= ()=> {
             console.log(res.data);
         })
         .catch((err)=>{
-            console.log(err.response.data.message);
+            alert(err.response.data.message);
         })
     }
 
@@ -60,7 +60,7 @@ const ApplicationFormPage= ()=> {
         )
     })
     
-{/* const onChangeSelectId(ev.target.value) gerar esta funcao para cada um dos inputs */}
+
 
 const onChangeSelectId=(ev)=>{
     setId(ev.target.value)

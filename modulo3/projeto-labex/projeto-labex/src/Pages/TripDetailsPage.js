@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { goBack } from "../Routes/coordinator";
+import axios from "axios";
 
 const StyleTripDetailsPage=styled.div`
 display: flex;
@@ -11,7 +12,25 @@ flex-direction: column;
 `
 
 
-const TripDetailsPage=()=>{
+export const TripDetailsPage=()=>{
+
+    useEffect(()=>{
+        const token = localStorage.getItem(`token`)
+        axios.get(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/matheus-natal-shaw/trip/AoTARgByI2yezYU0Msl5
+        `, {
+            headers:{
+                auth:token
+            }
+        })
+        .then((response)=>{
+            console.log(response.data);
+        })
+        .catch((error)=>{
+            console.log(error.response);
+        })
+    })
+
+
 
     const navigate=useNavigate()
 
