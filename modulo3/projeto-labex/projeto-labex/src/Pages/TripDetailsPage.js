@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
+import { goBack } from "../Routes/coordinator";
+import axios from "axios";
+import {useProtectedPage} from "../hooks/useProtectedPage"
 
 const StyleTripDetailsPage=styled.div`
 display: flex;
@@ -10,13 +13,27 @@ flex-direction: column;
 `
 
 
-const TripDetailsPage=()=>{
+
+export const TripDetailsPage=()=>{
+    useProtectedPage()
+    useEffect(()=>{
+        const token = localStorage.getItem(`token`)
+        axios.get(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/matheus-natal-shaw/trip/AoTARgByI2yezYU0Msl5
+        `, {headers:{
+            auth:token
+    }})
+       
+        .then((response)=>{
+            console.log(response.data);
+        })
+        .catch((error)=>{
+            console.log(error.response);
+        })
+    })
+
+
 
     const navigate=useNavigate()
-
-    const goBack = ()=>{
-        navigate(-1)
-    }
 
     return(
         <StyleTripDetailsPage>
@@ -27,7 +44,7 @@ const TripDetailsPage=()=>{
                 <p>Planeta:Plutão</p>
                 <p>Duração:7 Dias</p>
                 <p>Data:26/04/2022</p>
-                <button onClick={goBack}>Voltar</button>
+                <button onClick={()=>goBack(navigate)}>Voltar</button>
             </div>
         </StyleTripDetailsPage>
     )
