@@ -1,4 +1,4 @@
-import React,{useState, useEffect} from "react";
+    import React,{useState, useEffect} from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { goBack } from "../Routes/coordinator";
@@ -32,19 +32,19 @@ const LoginPage=()=> {
 
     const onChangeSubmitLogin = ()=>{
         
-        const body ={
+        const body = {
             email:email,
             password:password
         }
         axios.post(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/matheus-natal-shaw/login
         `,body)
 .then((response)=>{
-    console.log(`Deu certo!`, response.data.token)
-    localStorage.setItem(`token`, response.data.token)
-    {goToAdminHomePage}
+    console.log(`Deu certo!`, response.data)
+    window.localStorage.setItem(`token`, response.data.token)
+    {goToAdminHomePage(navigate)}
 })                                               
 .catch((error)=>{
-    console.log(`Deu errado!`, error.response);
+    alert(`Deu errado!`, error.response);
 })
 }
 

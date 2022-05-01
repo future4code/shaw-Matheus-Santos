@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { goBack } from "../Routes/coordinator";
 import { goToCreateTrip } from "../Routes/coordinator";
 import { goToTripDetailsPage } from "../Routes/coordinator";
+import {useProtectedPage}from "../hooks/useProtectedPage"
 
 const StyleAdminHomePage=styled.div`
 display: flex;
@@ -13,7 +14,7 @@ flex-direction: column;
 `
 
 const AdminHomePage= ()=> {
-
+    useProtectedPage()
     const navigate=useNavigate()
 
 

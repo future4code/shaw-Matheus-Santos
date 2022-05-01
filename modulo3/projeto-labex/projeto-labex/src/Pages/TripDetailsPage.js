@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { goBack } from "../Routes/coordinator";
 import axios from "axios";
+import {useProtectedPage} from "../hooks/useProtectedPage"
 
 const StyleTripDetailsPage=styled.div`
 display: flex;
@@ -12,16 +13,16 @@ flex-direction: column;
 `
 
 
-export const TripDetailsPage=()=>{
 
+export const TripDetailsPage=()=>{
+    useProtectedPage()
     useEffect(()=>{
         const token = localStorage.getItem(`token`)
         axios.get(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/matheus-natal-shaw/trip/AoTARgByI2yezYU0Msl5
-        `, {
-            headers:{
-                auth:token
-            }
-        })
+        `, {headers:{
+            auth:token
+    }})
+       
         .then((response)=>{
             console.log(response.data);
         })
