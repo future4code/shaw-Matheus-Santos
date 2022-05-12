@@ -1,8 +1,9 @@
 import React from "react";
-import { Router } from "./Routes/Router";
+import Router from "./Router/router";
 
 
-const App =()=> {
+
+const App=()=> {
   return (
     <div>
       <Router/>
