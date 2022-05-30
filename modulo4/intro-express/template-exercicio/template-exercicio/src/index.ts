@@ -83,7 +83,7 @@ const posts: Post []=[
 }
 
 ]
-
+//fsdfsfsf
 // Exercício 7
 
 app.get("/post",(req,res)=>{
@@ -93,4 +93,4 @@ app.get("/post",(req,res)=>{
 //Exercício 8
 app.get("/post/:1",(req,res)=>{
     res.send(posts[0])
-})
+}) 
