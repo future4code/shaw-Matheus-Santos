@@ -1,0 +1,1 @@
+1- a) Uma chave estrangeira é uma termo que ira se relacionar com outro termo de outra tabela, assim permitindo que uma tabela tenha acesso a informação de outra.
