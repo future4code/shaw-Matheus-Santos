@@ -1,8 +1,8 @@
 import React from "react";
 
-const singUpAdress = () =>{
+const SingUpAdress = () =>{
     return(
-        <div>singUpAdress</div>
+        <div>SingUpAdress</div>
     )
 }
-export default singUpAdress
+export default SingUpAdress

@@ -1,8 +1,8 @@
 import React from "react";
 
-const singUp = () =>{
+const SingUp = () =>{
     return(
-        <div>singUp</div>
+        <div>SingUp</div>
     )
 }
-export default singUp
+export default SingUp
