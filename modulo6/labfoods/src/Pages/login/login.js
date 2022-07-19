@@ -1,8 +1,13 @@
+import { Button } from "@mui/material";
 import React from "react";
 
 const Login = () =>{
     return(
-        <div>Login</div>
+        <div>
+            
+            <Button>Salve</Button>
+
+        </div>
     )
 }
 export default Login
