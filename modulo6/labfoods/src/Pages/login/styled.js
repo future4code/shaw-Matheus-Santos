@@ -4,7 +4,7 @@ import  TextField  from "@mui/material/TextField";
 
 
 export const InputMaterial= styled(TextField)`
-width: 100%;
+width: 100%; 
 
 `
 
@@ -16,7 +16,7 @@ export const Main = styled.div`
     flex-direction: column;
     align-items: center ;
     p{
-        font-size: 2rem;
+        font-size: 1rem;
     }
 `
 export const Form = styled.form`
