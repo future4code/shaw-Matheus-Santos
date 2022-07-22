@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "../../Hooks/useForm";
 import { ButtonStyled ,InputMaterial, Main, PassDiv } from "./styled";
 import  Visibility  from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff"
 import { IconButton } from "@mui/material";
+import axios from "axios";
+import {BASE_URL} from "../../Constants/url"
 
 const SingUp = () =>{
     
@@ -15,6 +17,13 @@ const SingUp = () =>{
             "password": ""
         }
     )
+
+        const [confirmPassword,setConfirmPassword] = useState('')
+        const [showPass,setShowPass] = useState(false)
+        const [showCheckPass,setShowCheckPass] = useState(false)
+        const [checkErrPass, setCheckErrPass] = useState(false)
+
+
         // const cpfMask = (value) => {
         //     return value
         //       .replace(/\D/g, "") // substitui qualquer caracter que nao seja numero por nada
@@ -25,20 +34,35 @@ const SingUp = () =>{
         //   }
         
     const handleClickShowPassword = () => {
-        setShowPassword(!showPassword)
+        setShowPass(!showPass)
     }
     const handleClickShowCheckPassword = () =>{
-        setShowCheckPassword(!showPassword)
+        setShowCheckPass(!showCheckPass)
     }
     
     const onSubmitForm= (event) => {
         event.preventDefault()
-        console.log(form);
 
+        if(form.password !== confirmPassword){
+            setCheckErrPass(true)
+        }else{
+            setCheckErrPass(false)
+            singUpPerson()
+            console.log(form);
+        }
     }
 
 
-      
+    const singUpPerson = async() =>{
+
+        await axios.post(`${BASE_URL}/signup`,form)
+        .then((res)=>{
+            console.log(res.data);
+        })
+        .catch((err)=>{
+            console.log(err.response);
+        })
+    }
 
 
     return(
@@ -54,6 +78,7 @@ const SingUp = () =>{
                 variant="outlined"
                 value={form.name}
                 onChange={onChange}
+                required
             />
                <InputMaterial
                 id="outlined-basic"
@@ -64,40 +89,65 @@ const SingUp = () =>{
                 variant="outlined"
                 value={form.email}
                 onChange={onChange}
+                required
             />
                  <InputMaterial
                 id="outlined-basic"
                 label={"Cpf"}
                 name='cpf'
-                type={''}
-                placeholder={'Digite o seu email'}
+                type={'text'}
+                placeholder={'Digite o seu cpf'}
                 variant="outlined"
-                value={(form.value)}
+                value={(form.cpf)}
                 onChange={onChange}
+                required
             />
-        <DivPassword>
+
+        <PassDiv>
             <InputMaterial 
-            error={checkErrPass}
-            helperText={checkErrPass ? errPass:``}
-            id="outlined-basic" 
-            label="Password"
-            type={showPassword ? `password` : `text`}
-            variant="outlined"
-            placeholder={`Minimo 6 caracteres`}
-            value={password}
-            onChange={(event)=>setPassword(event.target.value)}
-            inputProps={{minLength: 6, title:"A senha deve conter no mínimo 6 caracteres"}}
+            id="outlined-adornment-password"
+            label={'Password'}
+            name='password'
+            type={ showPass  ? 'text' : 'password'}
+            placeholder={'minimo 6 caracteres'}
+            inputProps={{minLength: 6, title: "A senha deve conter no mínimo 6 dígitos"}}
+            value={form.password}
+            onChange={onChange}
             required
-            />
+        />
+
             <IconButton
                   aria-label="toggle password visibility"
                   onClick={handleClickShowPassword}
                   edge="end"
                 >
-                  {showPassword ? <VisibilityOff /> : <Visibility />}
+                  {showPass ? <Visibility /> : <VisibilityOff />}
                 </IconButton>
-        </DivPassword>
-        </form>
+        </PassDiv>
+        <PassDiv>
+            <InputMaterial 
+            error={checkErrPass}
+            helperText={checkErrPass ? 'Deve ser a mesma que a anterior.':''}
+            id="outlined-adornment-password" 
+            label={'Confirmar'}
+            type={showCheckPass ? `text` : `password`}
+            placeholder={`Minimo 6 caracteres`}
+            inputProps={{minLength: 6, title:"A senha deve conter no mínimo 6 caracteres"}}
+            value={confirmPassword}
+            onChange={(e)=>setConfirmPassword(e.target.value)}
+            required
+            />
+
+            <IconButton
+                  aria-label="toggle password visibility"
+                  onClick={handleClickShowCheckPassword}
+                  edge="end"
+                >
+                  {showCheckPass ? <Visibility /> : <VisibilityOff />}
+                </IconButton>
+             </PassDiv>
+                <ButtonStyled type="submit">Entrar</ButtonStyled>
+            </form>
         </Main>
     )
 }

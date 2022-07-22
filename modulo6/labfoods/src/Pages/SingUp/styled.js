@@ -34,7 +34,7 @@ export const ButtonStyled = styled(Button)`
         background-color:#E8222E;
     }
 `
-export const DivPassword = styled.div`
+export const PassDiv = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
