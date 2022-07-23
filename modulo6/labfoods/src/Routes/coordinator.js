@@ -8,9 +8,9 @@ export const goToFeed = (navigate) =>{
 }
 
 export const goToSingUp = (navigate) =>{
-    navigate('/singUp')
+    navigate('/signUp')
 }
 
 export const goToSingUpAdress = (navigate) =>{
-    navigate ('/singUp/adress')
+    navigate ('/signUp/adress')
 }

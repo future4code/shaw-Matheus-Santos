@@ -6,6 +6,8 @@ import VisibilityOff from "@mui/icons-material/VisibilityOff"
 import { IconButton } from "@mui/material";
 import axios from "axios";
 import {BASE_URL} from "../../Constants/url"
+import { useNavigate } from "react-router-dom";
+import { goToSingUpAdress } from "../../Routes/coordinator";
 
 const SingUp = () =>{
     
@@ -17,6 +19,8 @@ const SingUp = () =>{
             "password": ""
         }
     )
+
+    const navigate = useNavigate()
 
         const [confirmPassword,setConfirmPassword] = useState('')
         const [showPass,setShowPass] = useState(false)
@@ -57,10 +61,14 @@ const SingUp = () =>{
 
         await axios.post(`${BASE_URL}/signup`,form)
         .then((res)=>{
-            console.log(res.data);
+            localStorage.setItem('token',res.data.token)
+            alert(`boas vindas ${res.data.user.name}`)
+            goToSingUpAdress(navigate)
         })
         .catch((err)=>{
-            console.log(err.response);
+            alert(err.response.data.message);
+            clean()
+            setConfirmPassword('')
         })
     }
 

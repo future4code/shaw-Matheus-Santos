@@ -14,8 +14,8 @@ return(
 <BrowserRouter>
     <Routes>
         <Route index element = {<Login/>}/>
-        <Route path='/singUp' element = {<SingUp/>}/>
-        <Route path='/singUp/adress' element = {<SingUpAdress/>}/>
+        <Route path='/signUp' element = {<SingUp/>}/>
+        <Route path='/signUp/adress' element = {<SingUpAdress/>}/>
         <Route path='/feed' element = {<Feed/>}/>
         <Route path='/feed/:restaurantId' element={<Restaurant/>}/>   
         <Route path='/profile' element={<Profile/>}/>
