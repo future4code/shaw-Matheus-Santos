@@ -7,10 +7,10 @@ export const goToFeed = (navigate) =>{
     navigate('/feed')
 }
 
-export const goToSingUp = (navigate) =>{
+export const goToSignUp = (navigate) =>{
     navigate('/signUp')
 }
 
-export const goToSingUpAdress = (navigate) =>{
+export const goToSignUpAdress = (navigate) =>{
     navigate ('/signUp/adress')
 }

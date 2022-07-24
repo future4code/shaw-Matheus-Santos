@@ -7,7 +7,7 @@ import { IconButton } from "@mui/material";
 import axios from "axios";
 import {BASE_URL} from "../../Constants/url"
 import { useNavigate } from "react-router-dom";
-import { goToSingUpAdress } from "../../Routes/coordinator";
+import { goToSignUpAdress } from "../../Routes/coordinator";
 
 const SingUp = () =>{
     
@@ -63,7 +63,7 @@ const SingUp = () =>{
         .then((res)=>{
             localStorage.setItem('token',res.data.token)
             alert(`boas vindas ${res.data.user.name}`)
-            goToSingUpAdress(navigate)
+            goToSignUpAdress(navigate)
         })
         .catch((err)=>{
             alert(err.response.data.message);
