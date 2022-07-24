@@ -108,6 +108,7 @@ const SingUp = () =>{
                 variant="outlined"
                 value={(form.cpf)}
                 onChange={onChange}
+
                 required
             />
 

@@ -3,7 +3,10 @@ import {ButtonStyled, InputMaterial, Main} from './styled'
 import { useForm } from "../../Hooks/useForm";
 import axios from "axios";
 import {BASE_URL} from "../../Constants/url"
+import { useNavigate } from "react-router-dom";
+import { goToFeed } from "../../Routes/coordinator";
 
+// SignUpAdressPart2  13:01
 
 const SignUpAdress = () =>{
     
@@ -18,6 +21,8 @@ const SignUpAdress = () =>{
         "complement": ""
         
     })
+
+    const navigate= useNavigate()
     
     const onSubmitFormAdress = (event) =>{
         event.preventDefault();
@@ -30,11 +35,13 @@ const SignUpAdress = () =>{
         console.log(token);
         await axios.put(`${BASE_URL}/address`,form,{
             headers: {
-                auth:token
+                auth:localStorage.getItem(`token`)
             }
         })
         .then((res)=>{
             console.log(res.data);
+            window.localStorage.setItem(`token`,res.data.token)
+            goToFeed(navigate)
         })
         .catch((err)=>{
             console.log(err.response);
@@ -52,6 +59,9 @@ const SignUpAdress = () =>{
                 name='street'
                 type={'text'}
                 placeholder={'Rua / Av'}
+                value={form.street}
+                onChange={onChange}
+                required
                 
             />
             <InputMaterial
