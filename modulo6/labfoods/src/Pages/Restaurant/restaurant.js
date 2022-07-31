@@ -1,8 +1,10 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import CardProduct from "../../Components/CardProduct/CardProduct";
+import CardRestaurant from "../../Components/CardRestaurant/CardRestaurant";
 import { BASE_URL } from "../../Constants/url";
-import { CardRestaurant } from "./styled";
+import { CardRestaurant, ContainerRestaurant } from "./styled";
 
 const Restaurant = () =>{
     const { restaurantId } =useParams()
@@ -28,6 +30,11 @@ const Restaurant = () =>{
         <ContainerRestaurant>
             <CardRestaurant>
                 <CardRestaurantDetails restaurant = {restaurant} />
+                {
+                    restaurant.products && restaurant.products.map((product) => {
+                        return <CardProduct product = {product} key={product.id}/>
+                    })
+                }
             </CardRestaurant>
         </ContainerRestaurant>
     )
