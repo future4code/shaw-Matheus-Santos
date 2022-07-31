@@ -16,9 +16,11 @@ return(
         <Route index element = {<Login/>}/>
         <Route path='/signUp' element = {<SingUp/>}/>
         <Route path='/signUp/adress' element = {<SingUpAdress/>}/>
+        <Route path='/adressEdit/:id' element = {<AdressEdit/>}/>
         <Route path='/feed' element = {<Feed/>}/>
         <Route path='/feed/:restaurantId' element={<Restaurant/>}/>   
         <Route path='/profile' element={<Profile/>}/>
+        <Route path='/profile/:id' element = {<ProfileEdit/>}/>
         <Route path='/cart' element={<Cart/>}/>
         
         

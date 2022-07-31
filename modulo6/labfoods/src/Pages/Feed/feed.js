@@ -86,6 +86,25 @@ const Feed = () =>{
     .map((restaurant) => {
         return <CardRestaurant restaurant={restaurant} />
     })
+
+    const changeCategory = (category) =>{
+        setValueCategory(category)
+
+        const result = categoryRestaurant.map((cat)=>{
+            if(cat.category === category) {
+                return{
+                    ...cat,
+                    select:true
+                }
+            }else{
+                return{
+                    ...cat,
+                    select:false     
+            }
+          } 
+        })
+        setCategoryRestaurant(result);
+    }
     
     return(
         
@@ -100,7 +119,7 @@ const Feed = () =>{
             </BoxInputSearch>
             <Menu>
             <MenuItem 
-                     onClick={() =>setValueCategory('')}
+                     onClick={() =>changeCategory('')}
                          >
                         Todos
                             
@@ -110,7 +129,7 @@ const Feed = () =>{
                         return (
                         <MenuItem 
                             select = {false}
-                            onClick={() =>setValueCategory(category.category)}
+                            onClick={() =>changeCategory(category.category)}
                             >
                             {category.category}
                          </MenuItem>)
